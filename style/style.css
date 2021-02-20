@@ -21,6 +21,14 @@ input {
     margin-top: .2em;
 }
 
+#finished {
+    margin: 0 3em 0 0;
+    font-size: .8em;
+    border: 0px;
+    background-color: white;
+    margin-top: .2em;
+}
+
 
 /*responsive */
 

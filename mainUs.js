@@ -17,6 +17,8 @@ STEPS
   - append the data to the DOM
 
 */
+var cityNameArray = [];
+var count = 0;
 
 $(document).ready(function() {
     console.log('script loaded')
@@ -41,10 +43,11 @@ $(document).ready(function() {
 
         //console.log(apiKey)
         //console.log(zip)
-
+        cityNameArray[count++] = data.city.name;
 
         $.getJSON(total, function(data) {
             getData(data)
+            getOverallData(data);
         });
     }
 
@@ -81,6 +84,12 @@ $(document).ready(function() {
         } else if (temp < 40) {
             $('.imageWrapper').addClass('wrapper_cold');
         }
+        manipulateDom(location, temp, desc, minTemp, maxTemp, country, latitude, longitude, realFeel, seaLevel, humidity, date);
+    }
+
+    var getOverallData = function(data) {
+        var location = data.city.name;
+
         manipulateDom(location, temp, desc, minTemp, maxTemp, country, latitude, longitude, realFeel, seaLevel, humidity, date);
     }
 
