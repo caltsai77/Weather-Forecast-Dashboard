@@ -3,16 +3,16 @@
 
 <head>
     <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta http-equiv='X-UA-Compatible' content='ie=edge' />
 
     <title>5-Day Forecast (3 Hour Updates) Tracker</title>
 
     <script src="src/jquery.js"></script>
 
-    <link rel='stylesheet' type='text/css' href='style/reset.css'>
-    <link rel='stylesheet' type='text/css' href='style/style.css'>
-    <link rel='stylesheet' type='text/css' href='style/style_responsive.css'>
+    <link rel='stylesheet' type='text/css' href='./style/reset.css'>
+    <link rel='stylesheet' type='text/css' href='./style/style.css'>
+    <link rel='stylesheet' type='text/css' href='./style/style_responsive.css'>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
 </head>
@@ -23,7 +23,7 @@
     <!-- input box -->
     <nav class="navlarge">
         <input id='zip' type="text" placeholder="Please Enter a Zip Code" />
-        <button id='submit' type='submit' value='Submit'><i aria-hidden="true"></i></button>
+        <button id='submit' type='submit' value='Submit'><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
     </nav>
 
     <div class="wrapper">
@@ -32,8 +32,9 @@
                 <div class="groupInfo">
                     <!-------------------------------------------------------------------->
                     <!-- location, temp, desc, country, lat, and lon info-->
-                    <div class="info">
+                    <div class="info infoRight">
                         <div id="location"></div>
+                        <p>location</p>
                         <div id="country"></div>
                         <div id="date"></div>
                         <div id="temp"></div>
@@ -46,7 +47,7 @@
                     <!-- end of location, temp, desc, country, lat, and long info-->
 
                     <!-- max and min temp info -->
-                    <div class="info">
+                    <div class="info infoLeft">
                         <div id="minTemp"></div>
                         <p>Min. Temp</p>
                         <div id="maxTemp"></div>
@@ -62,6 +63,7 @@
                     </div>
                     <!-- end of max and min temp info -->
                     <!-------------------------------------------------------------------->
+
 
                 </div>
                 <!-- End of Grouping Info -->

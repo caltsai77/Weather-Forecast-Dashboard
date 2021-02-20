@@ -30,6 +30,7 @@ $(document).ready(function() {
         let zip = $('#zip').val();
         let apiKey = ",us&units=imperial&appid=974c49846451be7321f8e80b69d91954";
         let total = url + zip + apiKey;
+        //total = "http://api.openweathermap.org/data/2.5/weather?zip=92694,us&units=imperial&appid=974c49846451be7321f8e80b69d91954";
         // console.log(apiKey)
         // console.log(zip)
 
