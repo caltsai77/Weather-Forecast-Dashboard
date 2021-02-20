@@ -1,3 +1,7 @@
 Outline for project
 
 test
+
+Open Weather Map API Key:
+
+974c49846451be7321f8e80b69d91954
