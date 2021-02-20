@@ -104,7 +104,14 @@ input {
 #realFeel,
 #seaLevel,
 #humidity,
-#date {
+#date,
+#humidity2,
+#minTemp2,
+#maxTemp2,
+#realFeel2,
+#date2,
+#desc2,
+#temp2 {
     font-size: 1.0em;
     margin: .2em 0em;
     display: inline-block;

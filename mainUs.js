@@ -75,6 +75,15 @@ $(document).ready(function() {
 
         var date = data.list[0].dt_txt;
 
+        var date2 = data.list[7].dt_txt;
+        var temp2 = data.list[7].main.temp.toFixed();
+        var desc2 = data.list[7].weather[7].description;
+        var realFeel2 = data.list[7].main.feels_like.toFixed();
+        var humidity2 = data.list[7].main.humidity.toFixed();
+        var minTemp2 = data.list[7].main.temp_min.toFixed();
+        var maxTemp2 = data.list[7].main.temp_max.toFixed();
+
+
 
         //images changes depending on the temp
         if (temp > 90) {
@@ -84,7 +93,8 @@ $(document).ready(function() {
         } else if (temp < 40) {
             $('.imageWrapper').addClass('wrapper_cold');
         }
-        manipulateDom(location, temp, desc, minTemp, maxTemp, country, latitude, longitude, realFeel, seaLevel, humidity, date);
+        manipulateDom(location, temp, desc, minTemp, maxTemp, country, latitude, longitude,
+            realFeel, seaLevel, humidity, date, date2, temp2, desc2, minTemp2, maxTemp2, realFeel2, humidity2);
     }
 
     /*var getOverallData = function(data) {
@@ -95,7 +105,8 @@ $(document).ready(function() {
 
 
     //Displays returned info in the Dom
-    var manipulateDom = function(location, temp, desc, minTemp, maxTemp, country, latitude, longitude, realFeel, seaLevel, humidity, date) {
+    var manipulateDom = function(location, temp, desc, minTemp, maxTemp, country, latitude, longitude, realFeel,
+        seaLevel, humidity, date, date2, temp2, desc2, minTemp2, maxTemp2, realFeel2, humidity2) {
         // console.log('inside manipulateDom');
         $('#location').html("City: " + location);
         $('#temp').html(temp + "&deg");
@@ -110,6 +121,14 @@ $(document).ready(function() {
         $('#seaLevel').html("Sea Level: " + seaLevel + " feet");
         $('#humidity').html("Humidity: " + humidity + "%");
         $('#date').html(date);
+
+        $('#date').html(date2);
+        $('#temp').html(temp2 + "&deg");
+        $('#desc').html("\nCurrent Weather: " + desc2);
+        $('#minTemp').html("Min. Temp: " + minTemp2 + "&deg");
+        $('#maxTemp').html("Max. Temp: " + maxTemp2 + "&deg");
+        $('#realFeel').html("Real Feel: " + realFeel2 + "&deg");
+        $('#humidity').html("Humidity: " + humidity2 + "%");
     }
 
     //animate display
