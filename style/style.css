@@ -43,9 +43,9 @@ input {
 
 .imageWrapper {
     position: relative;
-    width: 28em;
-    margin: 9em auto;
-    border-radius: 50%;
+    width: 35em;
+    margin: 7em auto;
+    border-radius: 0%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -60,7 +60,7 @@ input {
 
 .content {
     position: absolute;
-    top: 17%;
+    top: 18.5%;
     margin: 0 auto;
     width: 100%;
 }
@@ -82,15 +82,23 @@ input {
 }
 
 #temp {
-    font-size: 8em;
+    font-size: 7em;
 }
 
 #location,
 #desc,
 #minTemp,
-#maxTemp {
-    font-size: 1.5em;
-    margin: .2em 0em;
+#maxTemp,
+#location,
+#country,
+#latitude,
+#longitude,
+#realFeel,
+#seaLevel,
+#humidity,
+#date {
+    font-size: 0.5em;
+    margin: .1em 0em;
     display: inline-block;
 }
 
