@@ -27,17 +27,17 @@ $(document).ready(function() {
 
     //FUNCTION ADD AJAX CALL FOR OPENWEATHER API
     function makeCall() {
-        /*let url = "http://api.openweathermap.org/data/2.5/forecast?zip=";
+        let url = "http://api.openweathermap.org/data/2.5/forecast?zip=";
         let zip = $('#zip').val();
         let apiKey = ",us&units=imperial&appid=974c49846451be7321f8e80b69d91954";
 
         let total = url + zip + apiKey;
-        total = "http://api.openweathermap.org/data/2.5/forecast?zip=18914,us&units=imperial&appid=974c49846451be7321f8e80b69d91954";*/
+        //total = "http://api.openweathermap.org/data/2.5/forecast?zip=18914,us&units=imperial&appid=974c49846451be7321f8e80b69d91954";
 
-        let url = "http://api.openweathermap.org/data/2.5/weather?zip=";
+        /*let url = "http://api.openweathermap.org/data/2.5/weather?zip=";
         let zip = $('#zip').val();
         let apiKey = ",us&units=imperial&appid=974c49846451be7321f8e80b69d91954";
-        let total = url + zip + apiKey;
+        let total = url + zip + apiKey;*/
 
         //console.log(apiKey)
         //console.log(zip)
@@ -64,13 +64,13 @@ $(document).ready(function() {
 
         var country = data.city.country;
         var latitude = data.city.coord.lat.toFixed();
-        var longitude = data.list.city.coord.lon.toFixed();
+        var longitude = data.city.coord.lon.toFixed();
 
         var realFeel = data.list[0].main.feels_like.toFixed();
         var seaLevel = data.list[0].main.sea_level.toFixed();
         var humidity = data.list[0].main.humidity.toFixed();
 
-        var date = data.list[0].weather.dt_txt.toFixed();
+        var date = data.list[0].dt_txt;
 
 
         //images changes depending on the temp
@@ -88,18 +88,18 @@ $(document).ready(function() {
     //Displays returned info in the Dom
     var manipulateDom = function(location, temp, desc, minTemp, maxTemp, country, latitude, longitude, realFeel, seaLevel, humidity, date) {
         // console.log('inside manipulateDom');
-        $('#location').html(location);
+        $('#location').html("City: " + location);
         $('#temp').html(temp + "&deg");
-        $('#desc').html(desc);
-        $('#minTemp').html(minTemp + "&deg");
-        $('#maxTemp').html(maxTemp + "&deg");
+        $('#desc').html("\nCurrent Weather: " + desc);
+        $('#minTemp').html("Min. Temp: " + minTemp + "&deg");
+        $('#maxTemp').html("Max. Temp: " + maxTemp + "&deg");
 
-        $('#country').html(country);
-        $('#latitude').html(latitude + "&deg");
-        $('#longitude').html(longitude + "&deg");
-        $('#realFeel').html(realFeel + "&deg");
-        $('#seaLevel').html(seaLevel + " feet");
-        $('#humidity').html(humidity + "%");
+        $('#country').html("Country: " + country + "\n");
+        $('#latitude').html("Latitude: " + latitude + "&deg");
+        $('#longitude').html("Longitude: " + longitude + "&deg");
+        $('#realFeel').html("Real Feel: " + realFeel + "&deg");
+        $('#seaLevel').html("Sea Level: " + seaLevel + " feet");
+        $('#humidity').html("Humidity: " + humidity + "%");
         $('#date').html(date);
     }
 
