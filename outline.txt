@@ -1,9 +1,7 @@
 Outline for project
 
-Main Goal:
+test
 
+Open Weather Map API Key:
 
-Roles:
-
-
-
+974c49846451be7321f8e80b69d91954
