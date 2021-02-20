@@ -1,54 +1,77 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
-  <meta charset='UTF-8' />
-  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-  <meta http-equiv='X-UA-Compatible' content='ie=edge' />
-  <title>Weather app!!!!!</title>
-  <script src="./src/jquery.js"></script>
-  <link rel='stylesheet' type='text/css' href='./style/reset.css'>
-  <link rel='stylesheet' type='text/css' href='./style/style.css'>
-  <link rel='stylesheet' type='text/css' href='./style/style_responsive.css'>
-  <link rel="stylesheet" type='text/css' href='./assets/font-awesome-4.7.0/css/font-awesome.min.css'>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+
+    <title>5-Day Forecast (3 Hour Updates) Tracker</title>
+
+    <script src="src/jquery.js"></script>
+
+    <link rel='stylesheet' type='text/css' href='style/reset.css'>
+    <link rel='stylesheet' type='text/css' href='style/style.css'>
+    <link rel='stylesheet' type='text/css' href='style/style_responsive.css'>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
 </head>
+
+
+
 <body>
-  <!--
-    HTML NEEDS
-    - input box
-    - submit button
-    - an element with a unique class, id, or data-attribute
-      for each of the weather metrics you want to put on the page.
-   -->
+    <!-- input box -->
+    <nav class="navlarge">
+        <input id='zip' type="text" placeholder="Please Enter a Zip Code" />
+        <button id='submit' type='submit' value='Submit'><i aria-hidden="true"></i></button>
+    </nav>
 
-   <!-- input box -->
-  <nav class= "navlarge">
-    <input id = 'zip' type="text" placeholder="Please Enter a Zip Code"/>
-    <button id='submit' type='submit' value='Submit'><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
-  </nav>
-  <div class="wrapper">
-    <article class="imageWrapper">
-      <div class="content" id= 'display'>
-        <div class= "groupInfo">
+    <div class="wrapper">
+        <article class="imageWrapper">
+            <div class="content">
+                <div class="groupInfo">
+                    <!-------------------------------------------------------------------->
+                    <!-- location, temp, desc, country, lat, and lon info-->
+                    <div class="info">
+                        <div id="location"></div>
+                        <div id="country"></div>
+                        <div id="date"></div>
+                        <div id="temp"></div>
+                        <div id="desc"></div>
+                        <br>
+                        <div id="latitude"></div>
+                        <div id="longitude"></div>
+                    </div>
 
-          <!-- temp, location and description -->
-          <div class= "info infoRight">
-            <div id="location"><p>location</p></div>
-          <div id="temp"><h1>0</h1></div>
-            <div id="desc"><p>description</p></div>
-          </div><!-- end info -->
+                    <!-- end of location, temp, desc, country, lat, and long info-->
 
-          <!-- max and min temp -->
-          <div class= "info infoLeft">
-            <div id="minTemp"><h3>0</h3></div>
-            <p>Min. </br>Temp</p>
-            <div id="maxTemp"><h3>0</h3></div>
-            <p>Max. </br>Temp</p>
-          </div><!-- end info -->
-        </div> <!-- end group info -->
-      </div> <!-- end content  -->
-    </article> <!-- end article -->
-  </div> <!-- end wrapper -->
-  <script src='./src/main.js'></script>
+                    <!-- max and min temp info -->
+                    <div class="info">
+                        <div id="minTemp"></div>
+                        <p>Min. Temp</p>
+                        <div id="maxTemp"></div>
+                        <p>Max. Temp</p>
+                        <div id="realFeel"></div>
+                        <br>
+                        <p>Real Feel</p>
+                        <div id="seaLevel"></div>
+                        <p>Sea Level</p>
+                        <div id="humidity"></div>
+                        <p>Humidity</p>
+
+                    </div>
+                    <!-- end of max and min temp info -->
+                    <!-------------------------------------------------------------------->
+
+                </div>
+                <!-- End of Grouping Info -->
+            </div>
+            <!-- End Content -->
+        </article>
+        <!-- End Image Wrapper -->
+    </div>
+    <!-- End Wrapper Class -->
+    <script src='mainUs.js'></script>
 </body>
+
 </html>

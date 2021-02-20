@@ -23,15 +23,18 @@ $(document).ready(function() {
 
     //EVENTLISTNER
     $("#submit").click(makeCall)
-        // 974c49846451be7321f8e80b69d91954
-        //FUNCTION ADD AJAX CALL FOR OPENWEATHER API
+        // Our apiKey is: 974c49846451be7321f8e80b69d91954
+
+    //FUNCTION ADD AJAX CALL FOR OPENWEATHER API
     function makeCall() {
-        let url = "http://api.openweathermap.org/data/2.5/weather?zip=";
+        let url = "http://api.openweathermap.org/data/2.5/forecast?zip=";
         let zip = $('#zip').val();
         let apiKey = ",us&units=imperial&appid=974c49846451be7321f8e80b69d91954";
+
         let total = url + zip + apiKey;
-        // console.log(apiKey)
-        // console.log(zip)
+        total = "http://api.openweathermap.org/data/2.5/forecast?zip=18914,us&units=imperial&appid=974c49846451be7321f8e80b69d91954";
+        //console.log(apiKey)
+        //console.log(zip)
 
 
         $.getJSON(total, function(data) {
@@ -47,11 +50,22 @@ $(document).ready(function() {
         // console.log('inside getData', data.main.temp);
         // console.log('inside getData', data.name);
         // console.log('inside getData', data.weather[0].description);
-        var location = data.name;
-        var temp = data.main.temp.toFixed();
-        var desc = data.weather[0].description;
-        var minTemp = data.main.temp_min.toFixed();
-        var maxTemp = data.main.temp_max.toFixed();
+        var location = data.list.city.name;
+        var temp = data.list[0].main.temp.toFixed();
+        var desc = data.list[0].weather[0].description;
+        var minTemp = data.list[0].main.temp_min.toFixed();
+        var maxTemp = data.list[0].main.temp_max.toFixed();
+
+        var country = data.list.city.country;
+        var latitude = data.list.city.coord.lat.toFixed();
+        var longitude = data.list.city.coord.lon.toFixed();
+
+        var realFeel = data.list[0].main.feels_like.toFixed();
+        var seaLevel = data.list[0].main.sea_level.toFixed();
+        var humidity = data.list[0].main.humidity.toFixed();
+
+        var date = data.list[0].weather.dt_txt.toFixed();
+
 
         //images changes depending on the temp
         if (temp > 90) {
@@ -61,18 +75,26 @@ $(document).ready(function() {
         } else if (temp < 40) {
             $('.imageWrapper').addClass('wrapper_cold');
         }
-        manipulateDom(location, temp, desc, minTemp, maxTemp)
+        manipulateDom(location, temp, desc, minTemp, maxTemp, country, latitude, longitude, realFeel, seaLevel, humidity, date);
     }
 
 
     //Displays returned info in the Dom
-    var manipulateDom = function(location, temp, desc, minTemp, maxTemp) {
+    var manipulateDom = function(location, temp, desc, minTemp, maxTemp, country, latitude, longitude, realFeel, seaLevel, humidity, date) {
         // console.log('inside manipulateDom');
         $('#location').html(location);
         $('#temp').html(temp + "&deg");
         $('#desc').html(desc);
         $('#minTemp').html(minTemp + "&deg");
         $('#maxTemp').html(maxTemp + "&deg");
+
+        $('#country').html(country);
+        $('#latitude').html(latitude + "&deg");
+        $('#longitude').html(longitude + "&deg");
+        $('#realFeel').html(realFeel + "&deg");
+        $('#seaLevel').html(seaLevel + " feet");
+        $('#humidity').html(humidity + "%");
+        $('#date').html(date);
     }
 
     //animate display

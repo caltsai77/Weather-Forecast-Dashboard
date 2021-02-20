@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+    <title>Weather app!!!!!</title>
+    <script src="./src/jquery.js"></script>
+    <link rel='stylesheet' type='text/css' href='./style/reset.css'>
+    <link rel='stylesheet' type='text/css' href='./style/style.css'>
+    <link rel='stylesheet' type='text/css' href='./style/style_responsive.css'>
+    <link rel="stylesheet" type='text/css' href='./assets/font-awesome-4.7.0/css/font-awesome.min.css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+</head>
+
+<body>
+    <!--
+    HTML NEEDS
+    - input box
+    - submit button
+    - an element with a unique class, id, or data-attribute
+      for each of the weather metrics you want to put on the page.
+   -->
+
+    <!-- input box -->
+    <nav class="navlarge">
+        <input id='zip' type="text" placeholder="Please Enter a Zip Code" />
+        <button id='submit' type='submit' value='Submit'><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
+    </nav>
+    <div class="wrapper">
+        <article class="imageWrapper">
+            <div class="content">
+                <div class="groupInfo">
+
+                    <!-- temp, location and description -->
+                    <div class="info infoRight">
+                        <div id="location">
+                            <p>location</p>
+                        </div>
+                        <div id="temp">
+
+                        </div>
+                        <div id="desc">
+
+                        </div>
+                    </div>
+                    <!-- end info -->
+
+                    <!-- max and min temp -->
+                    <div class="info infoLeft">
+                        <div id="minTemp">
+
+                        </div>
+                        <p>Min.Temp</p>
+                        <div id="maxTemp">
+
+                        </div>
+                        <p>Max.Temp</p>
+                    </div>
+                    <!-- end info -->
+                </div>
+                <!-- end group info -->
+            </div>
+            <!-- end content  -->
+        </article>
+        <!-- end article -->
+    </div>
+    <!-- end wrapper -->
+    <script src='./src/main.js'></script>
+</body>
+
+</html>
