@@ -27,12 +27,18 @@ $(document).ready(function() {
 
     //FUNCTION ADD AJAX CALL FOR OPENWEATHER API
     function makeCall() {
-        let url = "http://api.openweathermap.org/data/2.5/forecast?zip=";
+        /*let url = "http://api.openweathermap.org/data/2.5/forecast?zip=";
         let zip = $('#zip').val();
         let apiKey = ",us&units=imperial&appid=974c49846451be7321f8e80b69d91954";
 
         let total = url + zip + apiKey;
-        total = "http://api.openweathermap.org/data/2.5/forecast?zip=18914,us&units=imperial&appid=974c49846451be7321f8e80b69d91954";
+        total = "http://api.openweathermap.org/data/2.5/forecast?zip=18914,us&units=imperial&appid=974c49846451be7321f8e80b69d91954";*/
+
+        let url = "http://api.openweathermap.org/data/2.5/weather?zip=";
+        let zip = $('#zip').val();
+        let apiKey = ",us&units=imperial&appid=974c49846451be7321f8e80b69d91954";
+        let total = url + zip + apiKey;
+
         //console.log(apiKey)
         //console.log(zip)
 
@@ -50,14 +56,14 @@ $(document).ready(function() {
         // console.log('inside getData', data.main.temp);
         // console.log('inside getData', data.name);
         // console.log('inside getData', data.weather[0].description);
-        var location = data.list.city.name;
+        var location = data.city.name;
         var temp = data.list[0].main.temp.toFixed();
         var desc = data.list[0].weather[0].description;
         var minTemp = data.list[0].main.temp_min.toFixed();
         var maxTemp = data.list[0].main.temp_max.toFixed();
 
-        var country = data.list.city.country;
-        var latitude = data.list.city.coord.lat.toFixed();
+        var country = data.city.country;
+        var latitude = data.city.coord.lat.toFixed();
         var longitude = data.list.city.coord.lon.toFixed();
 
         var realFeel = data.list[0].main.feels_like.toFixed();
