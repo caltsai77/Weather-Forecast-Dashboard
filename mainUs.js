@@ -17,8 +17,8 @@ STEPS
   - append the data to the DOM
 
 */
-var cityNameArray = [];
-var count = 0;
+//var cityNameArray = [];
+//var count = 0;
 
 $(document).ready(function() {
     console.log('script loaded')
@@ -43,11 +43,11 @@ $(document).ready(function() {
 
         //console.log(apiKey)
         //console.log(zip)
-        cityNameArray[count++] = data.city.name;
+        //cityNameArray[count++] = data.city.name;
 
         $.getJSON(total, function(data) {
             getData(data)
-            getOverallData(data);
+                //getOverallData(data);
         });
     }
 
@@ -87,11 +87,11 @@ $(document).ready(function() {
         manipulateDom(location, temp, desc, minTemp, maxTemp, country, latitude, longitude, realFeel, seaLevel, humidity, date);
     }
 
-    var getOverallData = function(data) {
+    /*var getOverallData = function(data) {
         var location = data.city.name;
 
         manipulateDom(location, temp, desc, minTemp, maxTemp, country, latitude, longitude, realFeel, seaLevel, humidity, date);
-    }
+    }*/
 
 
     //Displays returned info in the Dom
