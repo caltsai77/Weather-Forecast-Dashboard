@@ -13,6 +13,8 @@ Java, Javascript, HTML, CSS
 OpenWeatherMap API (Current Weather Data & 5 Day / 3 Hour Forecast Data)
 ### Frameworks: 
 jQuery, JavaFX, Scene Builder
+### Libraries:
+GSON library
 
 
 

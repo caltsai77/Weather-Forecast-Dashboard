@@ -1,5 +1,0 @@
-Used The following:
-Open Weather API
-GSON Library
-JavaFX Library
-SceneBuilder Application
