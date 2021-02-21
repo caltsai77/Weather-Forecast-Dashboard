@@ -1,4 +1,5 @@
-# SteelHacks2021Proj
+# Weather Forecast Dashboard
+## Created for the SteelHacks 2021 Hackathon 
 
 ## Purpose: 
 Our project is based off of the NSIN challenge, concerning weather information and getting it to a certain group of people in the most efficient way possible. We turned that into getting basic weather information for anywhere in the US out to the general public in a smooth and simple way.
