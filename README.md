@@ -7,9 +7,12 @@ Our project is based off of the NSIN challenge, concerning weather information a
  Simply put, our project gives a bit of basic information (temperature, conditions, wind) to the user for any zip code in the country. The user simply inputs their zip code, and all of their weather information is present for them there. No steps necessary to sort through past or future forecasts, no irrelevant or extraneous information. It is meant for someone who is waking up for the day and wants to see what the weather is like.
 
 ## Technical Languages and Platforms
- Languages: Java, Javascript, HTML, CSS
- APIs: OpenWeatherMap API (5 Day / 3 Hour Forecast Data)
- Frameworks: jQuery, JavaFX Scene Builder
+### Languages: 
+Java, Javascript, HTML, CSS
+### APIs: 
+OpenWeatherMap API (5 Day / 3 Hour Forecast Data)
+### Frameworks: 
+jQuery, JavaFX Scene Builder
 
 
 
