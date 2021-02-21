@@ -1,0 +1,2 @@
+To execute the jar file in the folder, you must first establish two local libraries, one using the gson.jar file and the second using the javafx sdk folder content. These
+two must first be set up and confuigured in the build path for the jar file to execute. 
