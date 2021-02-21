@@ -6,11 +6,10 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta http-equiv='X-UA-Compatible' content='ie=edge' />
 
-    <title>5-Day Forecast (3 Hour Updates) Tracker</title>
+    <title>Weather Forecast Dashboard by City </title>
 
     <script src="src/jquery.js"></script>
 
-    <link rel='stylesheet' type='text/css' href='./style/reset.css'>
     <link rel='stylesheet' type='text/css' href='./style/style.css'>
     <link rel='stylesheet' type='text/css' href='./style/style_responsive.css'>
 
@@ -20,7 +19,8 @@
 
 
 <body>
-    <!-- input box -->
+
+    <!-- Input for Zip Code -->
     <nav class="navlarge">
         <input id='zip' type="text" placeholder="Please Enter a Zip Code" />
         <button id='submit' type='submit' value='Submit'><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
@@ -30,9 +30,9 @@
         <article class="imageWrapper">
             <div class="content">
                 <div class="groupInfo">
-                    <!-------------------------------------------------------------------->
-                    <!-- location, temp, desc, country, lat, and lon info-->
-                    <div class="info infoRight">
+
+                    <!-- Info on Left Side-->
+                    <div class="info">
                         <div id="location"></div>
                         <div id="country"></div>
                         <div id="date"></div>
@@ -43,10 +43,8 @@
                         <div id="longitude"></div>
                     </div>
 
-                    <!-- end of location, temp, desc, country, lat, and long info-->
-
-                    <!-- max and min temp info -->
-                    <div class="info infoLeft">
+                    <!-- Info on Right Side -->
+                    <div class="info">
                         <div id="minTemp"></div>
                         <div id="maxTemp"></div>
                         <div id="realFeel"></div>
@@ -55,9 +53,6 @@
                         <div id="humidity"></div>
 
                     </div>
-                    <!-- end of max and min temp info -->
-                    <!-------------------------------------------------------------------->
-
 
                 </div>
                 <!-- End of Grouping Info -->
@@ -67,7 +62,7 @@
         <!-- End Image Wrapper -->
     </div>
     <!-- End Wrapper Class -->
-    <script src='mainUs.js'></script>
+    <script src='src/main.js'></script>
 </body>
 
 </html>

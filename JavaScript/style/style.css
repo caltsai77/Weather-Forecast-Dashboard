@@ -3,9 +3,6 @@ body {
     color: #125a70;
 }
 
-
-/*search field*/
-
 input {
     width: 15em;
     padding: .5em;
@@ -29,24 +26,21 @@ input {
     margin-top: .2em;
 }
 
-
-/*responsive */
-
 .wrapper {
     width: 100%;
     margin: 0 auto;
 }
 
 .wrapper_cold {
-    background: #fff url("../images/snow.jpg") no-repeat center;
+    background: #fff url("../images/cold.jpg") no-repeat center;
 }
 
 .wrapper_normal {
-    background: #fff url("../images/mist.jpg") no-repeat center;
+    background: #fff url("../images/normal.jpg") no-repeat center;
 }
 
 .wrapper_hot {
-    background: #fff url("../images/sea.jpg") no-repeat center;
+    background: #fff url("../images/hot.jpg") no-repeat center;
 }
 
 .imageWrapper {

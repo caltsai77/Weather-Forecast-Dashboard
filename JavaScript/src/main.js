@@ -1,60 +1,27 @@
-console.log('main.js is connected!');
-
-/*
-Here's an overview of the steps you'll follow to get your app to work...
-STEPS
-1. when the page loads
-  - add an event listener to the button
-2. When the button is clicked
-  - grab the input
-  - store the value
-  - make an API request based on the input value
-3. When the API response is returned
-  - grab all the appropriate DOM elements
-  - append the data to the DOM
-*/
-//var cityNameArray = [];
-//var count = 0;
-
 $(document).ready(function() {
     console.log('script loaded')
 
-    //EVENTLISTNER
+    // Enter Zip Code
     $("#submit").click(makeCall)
         // Our apiKey is: 974c49846451be7321f8e80b69d91954
 
-    //FUNCTION ADD AJAX CALL FOR OPENWEATHER API
+    // Call to Open Weather API
     function makeCall() {
         let url = "http://api.openweathermap.org/data/2.5/forecast?zip=";
         let zip = $('#zip').val();
         let apiKey = ",us&units=imperial&appid=974c49846451be7321f8e80b69d91954";
 
         let total = url + zip + apiKey;
-        //total = "http://api.openweathermap.org/data/2.5/forecast?zip=18914,us&units=imperial&appid=974c49846451be7321f8e80b69d91954";
 
-        /*let url = "http://api.openweathermap.org/data/2.5/weather?zip=";
-        let zip = $('#zip').val();
-        let apiKey = ",us&units=imperial&appid=974c49846451be7321f8e80b69d91954";
-        let total = url + zip + apiKey;*/
-
-        //console.log(apiKey)
-        //console.log(zip)
-        //cityNameArray[count++] = data.city.name;
-
+        // Call to access JSON file, assign data to vars
         $.getJSON(total, function(data) {
             getData(data)
-                //getOverallData(data);
         });
     }
 
-    //GRAB THE DATA
+    // Assign data in JSON file to vars
     var getData = function(data) {
-        // console.log(data);
-        // console.log('inside getData', data.main.temp_min);
-        // console.log('inside getData', data.main.temp_max);
-        // console.log('inside getData', data.main.temp);
-        // console.log('inside getData', data.name);
-        // console.log('inside getData', data.weather[0].description);
+
         var location = data.city.name;
         var temp = data.list[0].main.temp.toFixed();
         var desc = data.list[0].weather[0].description;
@@ -71,8 +38,7 @@ $(document).ready(function() {
 
         var date = data.list[0].dt_txt;
 
-
-        //images changes depending on the temp
+        // Change image background based on current temperature
         if (temp > 90) {
             $('.imageWrapper').addClass('wrapper_hot');
         } else if (temp > 41 && temp < 89) {
@@ -83,13 +49,7 @@ $(document).ready(function() {
         manipulateDom(location, temp, desc, minTemp, maxTemp, country, latitude, longitude, realFeel, seaLevel, humidity, date);
     }
 
-    /*var getOverallData = function(data) {
-        var location = data.city.name;
-        manipulateDom(location, temp, desc, minTemp, maxTemp, country, latitude, longitude, realFeel, seaLevel, humidity, date);
-    }*/
-
-
-    //Displays returned info in the Dom
+    //Displays returned info in the DOM via HTML ID assignments
     var manipulateDom = function(location, temp, desc, minTemp, maxTemp, country, latitude, longitude, realFeel, seaLevel, humidity, date) {
         // console.log('inside manipulateDom');
         $('#location').html("City: " + location);
@@ -107,12 +67,12 @@ $(document).ready(function() {
         $('#date').html(date);
     }
 
-    //animate display
+    // Move Zip Code input box (nav bar) to top right
     $("#submit").click(function() {
         $(".navlarge").addClass("navsmall", 5000, "easeOut");
     });
 
-    //submit on enter
+    //Submit on enter
     $(document).on('keyup', function(e) {
         var key = e.which;
         if (key == 13) {
