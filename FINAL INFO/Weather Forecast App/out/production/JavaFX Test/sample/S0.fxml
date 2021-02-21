@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.S0Cont">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="50.0" layoutY="20.0" prefHeight="91.0" prefWidth="400.0" text="Weather Forecast" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="45.0" />
+         </font>
+      </Label>
+      <Button layoutX="217.0" layoutY="345.0" mnemonicParsing="false" onAction="#nextPage" text="Continue" />
+      <TextField fx:id="zipCode" alignment="CENTER" layoutX="196.0" layoutY="270.0" onAction="#zipCodeBtn" prefHeight="54.0" prefWidth="108.0" promptText="Zip Code" />
+      <Label alignment="CENTER" layoutX="214.0" layoutY="227.0" text="Zip Code">
+         <font>
+            <Font name="Heiti TC Light" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
